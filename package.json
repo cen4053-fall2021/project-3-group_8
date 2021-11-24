@@ -1,8 +1,12 @@
 {
-  "name": "project-3-group_8",
+  "name": "@cel19/project-3",
   "description": "# Due: Wednesday, December 1st 11:59 PM CST",
   "version": "1.0.0",
   "main": "add.js",
+  "files": [
+    "add.js",
+    "add.test.js"
+  ],
   "scripts": {
     "test": "jest"
   },
