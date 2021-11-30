@@ -38,7 +38,6 @@ jobs:
         run: npm install
       - run: npm ci
       - run: npm test
-      - run: npm publish
 
   publish-package:
     needs: [ test-nodejs-14, test-nodejs-12 ]
