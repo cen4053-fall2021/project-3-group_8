@@ -40,21 +40,21 @@ jobs:
       - run: npm test
       - run: npm publish
 
-    publish-package:
-      needs: [ test-nodejs-14, test-nodejs-12 ]
-      runs-on: ubuntu-latest
+  publish-package:
+    needs: [ test-nodejs-14, test-nodejs-12 ]
+    runs-on: ubuntu-latest
 
-      steps:
-        - uses: actions/checkout@v2
-        - name: Use Node.js 14.x
-          uses: actions/setup-node@v2
-          with:
-            node-version: '14.x'
-            registry-url: 'https://npm.pkg.github.com'
-            scope: '@cen4053-fall2021'
-        - name: Install dependencies
-          run: npm install
-        - run: npm ci
-        - run: npm publish
-            env:
-              NODE_AUTH_TOKEN: ${{ secrets.GH_AUTH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@cen4053-fall2021'
+      - name: Install dependencies
+        run: npm install
+      - run: npm ci
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GH_AUTH_TOKEN }}
