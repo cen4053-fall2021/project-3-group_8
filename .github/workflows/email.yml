@@ -1,0 +1,26 @@
+# Sends an email when pull-request is made
+
+
+name: Email
+on: [pull_request]
+
+jobs:
+  email:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v3
+        with:
+          # Required mail server address:
+          server_address: smtp.gmail.com
+          # Required mail server port:
+          server_port: 465
+          # Required mail subject:
+          subject: Github Actions job result
+          # Required recipients' addresses:
+          to: cel19@students.uwf.edu
+          # Required sender full name (address can be skipped):
+          from: Collin Lowing
+          # Optional plain body:
+          body: Build job of ${{github.repository}} completed successfully!
