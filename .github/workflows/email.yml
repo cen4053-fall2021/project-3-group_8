@@ -16,7 +16,7 @@ jobs:
           server_address: smtp.gmail.com
           # Required mail server port:
           server_port: 465
-          username: cel19
+          username: cel19@students.uwf.edu
           password: ${{ secrets.EMAIL_PASSWORD }}
           # Required mail subject:
           subject: Github Actions job result
