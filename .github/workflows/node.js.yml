@@ -1,5 +1,4 @@
-# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node and publish the package if tests succeed.
 
 name: Node.js CI
 
@@ -35,12 +34,27 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14.x'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@cen4053-fall2021'
       - name: Install dependencies
         run: npm install
       - run: npm ci
       - run: npm test
       - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_AUTH_TOKEN }}
+
+    publish-package:
+      needs: [ test-nodejs-14, test-nodejs-12 ]
+      runs-on: ubuntu-latest
+
+      steps:
+        - uses: actions/checkout@v2
+        - name: Use Node.js 14.x
+          uses: actions/setup-node@v2
+          with:
+            node-version: '14.x'
+            registry-url: 'https://npm.pkg.github.com'
+            scope: '@cen4053-fall2021'
+        - name: Install dependencies
+          run: npm install
+        - run: npm ci
+        - run: npm publish
+            env:
+              NODE_AUTH_TOKEN: ${{ secrets.GH_AUTH_TOKEN }}
