@@ -16,7 +16,7 @@ jobs:
           server_address: smtp.gmail.com
           # Required mail server port:
           server_port: 465
-          username: cen4053.group8@gmail.com
+          username: cen4053.group8
           password: ${{ secrets.EMAIL_PASSWORD }}
           # Required mail subject:
           subject: Github Actions job result
