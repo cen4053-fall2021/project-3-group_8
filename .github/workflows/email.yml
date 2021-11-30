@@ -16,11 +16,13 @@ jobs:
           server_address: smtp.gmail.com
           # Required mail server port:
           server_port: 465
+          username: cel19@students.uwf.edu
+          password: ${{ secrets.EMAIL_PASSWORD }}
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
           to: cel19@students.uwf.edu
           # Required sender full name (address can be skipped):
-          from: Collin Lowing
+          from: cel19@students.uwf.edu
           # Optional plain body:
           body: Build job of ${{github.repository}} completed successfully!
