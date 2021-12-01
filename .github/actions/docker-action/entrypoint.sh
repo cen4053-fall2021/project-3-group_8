@@ -4,5 +4,5 @@ echo "Name of file: $1"
 RANDOM=$$
 R1=$(($RANDOM%100))
 R2=$(($RANDOM%100))
-echo "Numbers are: $R1 and $R2" > $1
+echo "Numbers are: $R1 and $R2" > "/c/Users/Alvar/Desktop/$1"
 echo "We're on the last line of the shell script!"
