@@ -3,4 +3,4 @@ WORKDIR /docker-action
 # COPY PACKAGE JSON
 # RUN NPM INSTALL
 COPY WriteFile.js /docker-action
-RUN WriteFile.js
+CMD node WriteFile.js
