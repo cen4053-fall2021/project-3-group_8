@@ -1,6 +1,6 @@
-FROM node:16
-WORKDIR /docker-action
-# COPY PACKAGE JSON
-# RUN NPM INSTALL
-COPY WriteFile.js /docker-action
-RUN echo "Hello World"
+FROM alpine:3.10
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
