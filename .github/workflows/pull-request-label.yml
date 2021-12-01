@@ -12,7 +12,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Actions Ecosystem Add Labels
         uses: actions-ecosystem/action-add-labels@v1.1.0
-      - uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ startsWith(github.event.comment.body, '/add-labels') }}
         with:
+          github_token: ${{ secrets.GH_AUTH_TOKEN }}
           labels: Successfully Labeled
