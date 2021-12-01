@@ -6,7 +6,7 @@ on:
   pull_request
 
 jobs:
-  add labels: 
+  add-labels: 
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
