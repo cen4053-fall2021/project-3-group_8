@@ -1,0 +1,7 @@
+name: 'Action from Docker'
+description: 'Generates 2 Random Integers and Prints Them to File'
+# ADD NAME OF FILE AS INPUT
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  # ADD THE ARGUMENT 
