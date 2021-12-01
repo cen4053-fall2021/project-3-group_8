@@ -6,11 +6,12 @@ on:
   pull_request
 
 jobs:
-  add labels: 
+  add-labels: 
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
-      - uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ startsWith(github.event.comment.body, '/add-labels') }}
+      - name: Actions Ecosystem Add Labels
+        uses: actions-ecosystem/action-add-labels@v1.1.0
         with:
+          github_token: ${{ secrets.GH_AUTH_TOKEN }}
           labels: Successfully Labeled
