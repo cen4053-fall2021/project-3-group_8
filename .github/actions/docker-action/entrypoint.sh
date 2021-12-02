@@ -7,3 +7,4 @@ R2=$(($RANDOM%100))
 echo "Numbers are: $R1 and $R2" > $1
 echo "We're on the last line of the shell script!"
 echo $PWD
+echo "$(ls)"
