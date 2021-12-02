@@ -1,3 +1,5 @@
+name: Docker and JavaScript Custom Actions
+
 on:
   push
 
@@ -11,13 +13,9 @@ jobs:
         uses: ./.github/actions/docker-action
         with:
           name-of-file: 'Numbers-By-Docker.txt'
-      - name: Current Directory and Files
-        run: echo $PWD "$(ls)"
       - name: Uploading Artifact
         uses: actions/upload-artifact@v2
         with:
           name: randomNumbers
           path: /home/runner/work/project-3-group_8/project-3-group_8/Numbers-By-Docker.txt
-      - name: Confirmation Message
-        run: echo "Artifact Uploaded"
         
