@@ -12,8 +12,7 @@ jobs:
         with:
           name-of-file: 'Numbers-By-Docker.txt'
       - name: Current Directory and Files
-        run: echo $PWD
-        run: echo "$(ls)"
+        run: echo $PWD "$(ls)"
       - name: Uploading Artifact
         uses: actions/upload-artifact@v2
         with:
