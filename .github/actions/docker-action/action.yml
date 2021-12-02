@@ -10,5 +10,3 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.name-of-file }}
-  volumes: 
-    - ${{ github.workspace }}:/workspace
