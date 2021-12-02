@@ -15,7 +15,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: randomNumbers
-          path: /github/workspace/Numbers-By-Docker.txt
+          path: /workspace/Numbers-By-Docker.txt
       - name: Confirmation Message
         run: echo "Artifact Uploaded"
         
