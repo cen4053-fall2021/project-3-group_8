@@ -1,0 +1,13 @@
+name: 'Action from JavaScript'
+description: 'Reads the File and Adds the Random Integers'
+inputs: 
+  name-of-file:
+    description: 'The name of the file that will be read'
+    required: true
+    default: 'Numbers.txt'
+outputs: 
+  final-result:
+    description: 'The result of performing the addition'
+runs:
+  using: 'node12'
+  main: 'index.js'
