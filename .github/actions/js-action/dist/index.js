@@ -1683,7 +1683,7 @@ try{
 
     const fileToRead = core.getInput('name-of-file');
     
-    fs.readFile(fileToRead, (err, data) => {
+    fs.readFile(fileToRead, "utf8", (err, data) => {
 
         if(err){
             core.setOutput('final-result', 'There was an error');  
