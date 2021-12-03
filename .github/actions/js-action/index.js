@@ -1,19 +1,19 @@
 const core = require('@actions/core');
-const github = require('@actions/github');
+const fs = require('fs'); 
 
 try{
 
-    let reader = new FileReader(); 
     const fileToRead = core.getInput('name-of-file');
-    reader.readAsText(fileToRead); 
+    
+    fs.readFile(fileToRead, (err, data) => {
 
-    reader.onload = () => {
-        core.setOutput("final-result", reader.result);
-    };
+        if(err){
+            core.setOutput('final-result', 'There was an error');  
+        }
 
-    reader.onerror = () => {
-        core.setOutput("final-result", reader.error);
-    };
+        core.setOutput('final-result', data); 
+
+    });
 
 } catch (error) {
     core.setFailed(error.message);
