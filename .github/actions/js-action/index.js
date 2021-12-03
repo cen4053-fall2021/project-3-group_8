@@ -11,7 +11,9 @@ try{
             core.setOutput('final-result', 'There was an error');  
         }
 
-        core.setOutput('final-result', data); 
+        let stringArray = data.split(' '); 
+        let finalResult = (parseInt(stringArray[0]) + parseInt(stringArray[1])); 
+        core.setOutput('final-result', finalResult); 
 
     });
 

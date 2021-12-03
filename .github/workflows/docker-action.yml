@@ -34,5 +34,5 @@ jobs:
         with:
           name-of-file: 'Numbers-By-Docker.txt'
       - name: Display Output
-        run: echo "The file read ${{ steps.addition.outputs.final-result }}"
+        run: echo "The result of adding the values is ${{ steps.addition.outputs.final-result }}"
         
